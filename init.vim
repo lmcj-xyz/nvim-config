@@ -36,9 +36,22 @@ let g:waikiki_default_maps=1
 " Vimtex config
 let g:vimtex_view_method='zathura'
 let g:vimtex_complete_close_braces=1
+let g:vimtex_quickfix_open_on_warning=0
+
+"" Custom mappings
+""" ctcb -> C_T \mathcal{C}^{-\beta}
+call vimtex#imaps#add_map({
+			\ 'lhs' : 'ctcb',
+			\ 'rhs' : 'C_T \mathcal{C}^{-\beta}',
+			\})
+""" bnb -> C_T \mathcal{C}^{-\beta}
+call vimtex#imaps#add_map({
+			\ 'lhs' : 'bnb',
+			\ 'rhs' : 'b^N \to b',
+			\})
 
 " Conceal
-set conceallevel=2
+set conceallevel=0
 let g:tex_conceal='abdgm'
 
 " Numbers at the left with relative numbering
