@@ -1,0 +1,30 @@
+global !p
+def math():
+  return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+endglobal
+
+context "math()"
+snippet bb "Blackboard character" i
+\mathbbm{$1}$0
+endsnippet
+
+context "math()"
+snippet ff "frac command" i
+\frac{$1}{$2}$0
+endsnippet
+
+context "math()"
+snippet ee "exponential" i
+e^{${1:${VISUAL:}}}$0
+endsnippet
+
+context "math()"
+snippet ctc "Besov space continuous it time" iA
+C_T \mathcal{C}^{$1}$0
+endsnippet
+
+context "math()"
+snippet bnb "b^N converges to b" iA
+b^N \to b$0
+endsnippet
+

@@ -1,16 +1,52 @@
 call plug#begin()
 "Plug 'vimwiki/vimwiki'
-Plug 'lervag/wiki.vim'
+"Plug 'lervag/wiki.vim'
 "Plug 'fcpg/vim-waikiki'
 Plug 'lervag/vimtex'
-Plug 'chrisbra/Colorizer'
+Plug 'SirVer/ultisnips'
 call plug#end()
 
-set nocompatible
+"Cursor line and column
+set cursorline
+set cursorcolumn
+
+" Encoding
+set encoding=utf-8
+
+" leader keys
+let mapleader='<space>'
+
+" Numbers at the left with relative numbering
+set number relativenumber
+" Spelling
+""" When setting up in a new system remember to run :set spell to  
+""" download spell files
+set spelllang=es_mx,en_gb
+" Cursor away from the borders of the file
+set scrolloff=10
+
+" Filetype
+filetype on
+filetype indent on
 filetype plugin on
+set nocompatible
 syntax on
 syntax enable
 
+" UltiSnips
+""" This are default values
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsListSnippets = '<c-tab>'
+let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-m>'
+
+"""UltiSnips directory
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/UltiSnips']
+
+"""Use <leader>u in normal mode to refresh UltiSnips snippets
+nnoremap <leader>u <Cmd>call UltiSnips#RefreshSnippets()<CR>
+
+""""""""""""WIKI Plugins
 " Vimwiki config
 let g:vimwiki_list=[{'path': '~/Repositorios/wiki/', 'path_html': '~/Repositorios/wiki/HTML/', 'template_path': '~/Repositorios/wiki/Templates/', 'template_default': 'Template', 'template_ext': '.html', 'syntax': 'markdown', 'ext': '.md'}]
 
@@ -30,35 +66,4 @@ let g:wiki_export = {
 
 " waikiki config
 let g:waikiki_roots=['~/Repositorios/wiki/']
-let maplocalleader='\<F7>'
 let g:waikiki_default_maps=1
-
-" Vimtex config
-let g:vimtex_view_method='zathura'
-let g:vimtex_complete_close_braces=1
-let g:vimtex_quickfix_open_on_warning=0
-
-"" Custom mappings
-""" ctcb -> C_T \mathcal{C}^{-\beta}
-call vimtex#imaps#add_map({
-			\ 'lhs' : 'ctcb',
-			\ 'rhs' : 'C_T \mathcal{C}^{-\beta}',
-			\})
-""" bnb -> C_T \mathcal{C}^{-\beta}
-call vimtex#imaps#add_map({
-			\ 'lhs' : 'bnb',
-			\ 'rhs' : 'b^N \to b',
-			\})
-
-" Conceal
-set conceallevel=0
-let g:tex_conceal='abdgm'
-
-" Numbers at the left with relative numbering
-set number relativenumber
-" Spelling
-set spelllang=es_mx,en_gb
-" Cursor away from the borders of the file
-set scrolloff=10
-" Indentation
-filetype plugin indent on
