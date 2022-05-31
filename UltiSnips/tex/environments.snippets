@@ -6,11 +6,19 @@ endsnippet
 
 snippet eq "Numbered equation" b
 \begin{equation}
-\label{eq:$1}
+  \label{eq:$1}
   ${2:${VISUAL:}}
 \end{equation}$0
 endsnippet
 
-snippet "(^|[^a-zA-Z])mm" "Inline maths" rA
+snippet "(^|[^a-zA-Z])mk" "Inline maths" rA
 `!p snip.rv = match.group(1)`\$ ${1:${VISUAL:}} \$$0
+endsnippet
+
+snippet blk "Block for tikzposter" b
+\block{$1}
+{
+  $2
+}
+$0
 endsnippet

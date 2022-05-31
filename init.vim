@@ -4,6 +4,7 @@ call plug#begin()
 "Plug 'fcpg/vim-waikiki'
 Plug 'lervag/vimtex'
 Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-surround'
 call plug#end()
 
 "Cursor line and column
