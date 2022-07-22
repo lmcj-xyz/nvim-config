@@ -5,7 +5,12 @@ endglobal
 
 context "math()"
 snippet bb "Blackboard character" i
-\mathbbm{$1}$0
+\mathbb{$1}$0
+endsnippet
+
+context "math()"
+snippet cc "Caligraphic character" i
+\mathcal{$1}$0
 endsnippet
 
 context "math()"
@@ -41,4 +46,44 @@ endsnippet
 context "math()"
 snippet ^ "Superscript" iA
 ^{$1}$0
+endsnippet
+
+context "math()"
+snippet in "Set inclusion" i
+\in$0
+endsnippet
+
+context "math()"
+snippet 0t "Interval [0,T]" i
+[0, T]$0
+endsnippet
+
+context "math()"
+snippet dint "Integral" i
+\int_{$1}^{$2}$0
+endsnippet
+
+context "math()"
+snippet lr( "Integral" iA
+\left( $1 \right)$0
+endsnippet
+
+context "math()"
+snippet lr[ "Integral" iA
+\left[ $1 \right]$0
+endsnippet
+
+context "math()"
+snippet lr{ "Integral" iA
+\left\{ $1 \right\}$0
+endsnippet
+
+context "math()"
+snippet lr! "Integral" iA
+\left\| $1 \right\|$0
+endsnippet
+
+context "math()"
+snippet lr| "Integral" iA
+\left| $1 \right|$0
 endsnippet
